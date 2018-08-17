@@ -1,0 +1,4 @@
+Things that need to be worked on:
+	-If student java file needs to recieve data from Command line 
+	-Complex method that compares the output of the txt file and Student's file
+	-Extract a single method and test it against sample data

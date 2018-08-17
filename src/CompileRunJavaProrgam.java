@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 public class CompileRunJavaProrgam {
 	
 	private static StudentSubmission stdnt; 
-	private static ExpectedOutputFile file;
+	private static ExpectedOutputFile textFile;
 	
 	public static void main(String[] args) {
 		
-		file = new ExpectedOutputFile(args[1]);//args[1] is the path to the text file
+		textFile = new ExpectedOutputFile(args[1]);//args[1] is the path to the text file
 		stdnt = new StudentSubmission(args[0]);//args[0] is the path to the java file
 
 		try {	
@@ -24,7 +24,7 @@ public class CompileRunJavaProrgam {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(file.getFileOutput().equals(stdnt.getProgramOutput()));
+		System.out.println(textFile.getFileOutput().equals(stdnt.getProgramOutput()));
 
 		
 	}//end of main
@@ -38,7 +38,14 @@ public class CompileRunJavaProrgam {
 		return (!(line.equals(null))) ? line: "";
 	}//end of generateOutput
 	
-	private static void runProcess(String command) throws IOException, InterruptedException {
+	
+	/*
+	 * This method runs a given command in the terminal
+	 * stores the given output in the stdnt object
+	 * waits for current process to end before starting a new one
+	 * prints the exit value, signifying whehter the process was successfull
+	 */
+	private static void runProcess(String command) throws Exception {
 		Process proc = Runtime.getRuntime().exec(command);
 		stdnt.setProgramOutput(generateOutput(proc.getInputStream()));
 		stdnt.setErrOutPut(generateOutput(proc.getErrorStream()));
