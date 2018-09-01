@@ -9,12 +9,17 @@ public class CompileRunJavaProrgam {
 	private static ExpectedOutputFile textFile;
 	
 	public static void main(String[] args) {
+		long startCompileTime = System.nanoTime();
+		long com   = System.nanoTime();
+		long totalTime = endTime - startTime;
+		System.out.println(totalTime);
 		
 		textFile = new ExpectedOutputFile(args[1]);//args[1] is the path to the text file
 		stdnt = new StudentSubmission(args[0]);//args[0] is the path to the java file
 
 		try {	
 			System.out.println("Terminal Command: "+stdnt.compileJavaCommand());
+			
 			runProcess(stdnt.compileJavaCommand());
 			System.out.println("*****");
 			

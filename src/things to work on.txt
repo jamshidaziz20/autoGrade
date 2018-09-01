@@ -3,3 +3,14 @@ Things that need to be worked on:
 	-Complex method that compares the output of the txt file and Student's file
 	-Extract a single method and test it against sample data
 	-Compare the phrase, ignore the format of the output. (Unless specified by professor).
+	-handle the case of student file compile file (infinite loop)
+	
+	
+	-convert to a JAR 
+	-return a stringfied json
+		-status: 0 or 1 (compilation record of the student file)
+		-result: pass of fail. (compare the student file with the expected output)
+		-message: if status is 0, send error message. else "everything is good."
+		-studentOutput: the output of the student
+		-expectedOutput: the expeted output
+		-processTime: return list of start and end of compilation and start and end of testing the code.
