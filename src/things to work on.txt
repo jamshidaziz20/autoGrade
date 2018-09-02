@@ -9,8 +9,8 @@ Things that need to be worked on:
 	-convert to a JAR 
 	-return a stringfied json
 		-status: 0 or 1 (compilation record of the student file)
-		-result: pass of fail. (compare the student file with the expected output)
-		-message: if status is 0, send error message. else "everything is good."
+		-result: pass or fail. (compare the student file with the expected output)
+		-message: if status is 1, send error message. else "everything is good."
 		-studentOutput: the output of the student
-		-expectedOutput: the expeted output
+		-expectedOutput: the expected output
 		-processTime: return list of start and end of compilation and start and end of testing the code.

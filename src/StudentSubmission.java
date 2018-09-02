@@ -1,10 +1,13 @@
 
+
 public class StudentSubmission {
 	private String javaFileName;
 	private String programOutput;
 	private String errOutPut;
 	private String fullPath;
 	private String filteredPath;
+	private int exitStatus;
+	private String result;
 	
 	public StudentSubmission(String fullPath) {
 		this.fullPath = fullPath;
@@ -36,11 +39,19 @@ public class StudentSubmission {
 	public void setErrOutPut(String errOutPut) {
 		this.errOutPut = errOutPut;
 	}
+	
+	/*
+	 * This method extracts the filename without the .java part
+	 */
 	public String filterJavaFileName(String path) {
 		String[] pathArr = path.split("/");
 		return pathArr[pathArr.length-1].split("\\.")[0];
 	}
 	
+	/*
+	 * This method removes the .java part of the path
+	 * And returns back a string of the path without the .java
+	 */
 	public String filterPathName(String path) {
 		String[] pathArr = path.split("\\/");
 		String x= "";
@@ -49,4 +60,27 @@ public class StudentSubmission {
 		}
 		return x;
 	}
+
+
+	public int getExitStatus() {
+		return exitStatus;
+	}
+
+
+	public void setExitStatus(int exitStatus) {
+		this.exitStatus = exitStatus;
+	}
+
+
+	public String getResult() {
+		return result;
+	}
+
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+
+	
 }
