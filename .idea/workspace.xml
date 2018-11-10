@@ -153,7 +153,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541812592210" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541812881777" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../jtester" />
@@ -264,9 +264,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StudentSubmissionFileTest - 2018.11.09 at 15h 10m 19s.xml">
-      <configuration name="StudentSubmissionFileTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="StudentSubmissionFileTest_getJavaCode - 2018.11.09 at 15h 11m 34s.xml">
       <configuration name="StudentSubmissionFileTest.getJavaCode" configurationId="JUnit" />
     </history-entry>
@@ -292,6 +289,9 @@
       <configuration name="MainTest.main" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MainTest_main - 2018.11.09 at 17h 05m 41s.xml">
+      <configuration name="MainTest.main" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainTest_main - 2018.11.09 at 17h 14m 30s.xml">
       <configuration name="MainTest.main" configurationId="JUnit" />
     </history-entry>
   </component>
