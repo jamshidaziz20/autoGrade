@@ -7,12 +7,16 @@ class MainTest {
 
     @Test
     void main() {
-        String javaPath = "/home/jamsid/Desktop/test.java";
-        String outPutPath = "/home/jamsid/Desktop/text.txt";
+        String javaFile = "Test";
+        String textFile = "SampleTextFile";
+
+        String javaPath = "/home/jamshid/IntelliJWorkspace/jtester/Master/TestingFiles1/src/"+javaFile+".java";
+        String outPutPath = "/home/jamshid/IntelliJWorkspace/jtester/Master/TestingFiles1/textFiles/"+textFile+".txt";
         Main test = new Main(javaPath,outPutPath);
         test.runStudentFile();
         String expectedOutput = test.expectedOutputFile.getFileOutput();
         String studentOutput = test.studentSubmissionFile.getProgramOutput();
         assertEquals(expectedOutput,studentOutput);
+
     }
 }

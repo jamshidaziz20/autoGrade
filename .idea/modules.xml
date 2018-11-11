@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/JavaTester.iml" filepath="$PROJECT_DIR$/JavaTester.iml" />
       <module fileurl="file://$PROJECT_DIR$/Master/Master.iml" filepath="$PROJECT_DIR$/Master/Master.iml" />
       <module fileurl="file://$PROJECT_DIR$/SyntaxTesting/SyntaxTesting.iml" filepath="$PROJECT_DIR$/SyntaxTesting/SyntaxTesting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Master/TestingFiles1/TestingFiles1.iml" filepath="$PROJECT_DIR$/Master/TestingFiles1/TestingFiles1.iml" />
     </modules>
   </component>
 </project>

@@ -10,5 +10,6 @@ class StudentSubmissionFileTest {
         StudentSubmissionFile test = new StudentSubmissionFile(path);
         String temp = test.getJavaCode();
         System.out.println(temp);
+
     }
 }

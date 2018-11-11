@@ -1,8 +1,5 @@
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Scanner;
 
 public class TerminalCommands {
@@ -18,28 +15,26 @@ public class TerminalCommands {
      */
     public void runJAVAC(StudentSubmissionFile file) {
         String command = "javac " + file.getPath();
-        executeCommand(command, file);
+        try {
+            Process process = Runtime.getRuntime().exec(command);
+            file.setErrorOutput(readFromTerminal(process.getErrorStream()));
+            process.waitFor();
+            file.setExitStatus(process.exitValue());
+//            process.destroy(); not sure if should destroy the process
+        } catch (IOException e) {
+            System.out.println("IOException: runStudentCode() in TerminalCommands.java");
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: runStudentCode() in TerminalCommands.java");
+        }
 
     }
 
     /**
-     * This method runs the given student java file using the executeCommand() method
+     * This method runs the given student java file
      * @param file - the student java file
      */
     public void runJAVA(StudentSubmissionFile file) {
         String command = "java -cp " + file.getParentFilePath() + " " + file.getFileName();
-        executeCommand(command, file);
-    }
-
-    /**
-     * populates the StudentSubmissionFile object with:
-     * the program output
-     * any errors
-     * and the 'exit status' of the program
-     * @param command - receives a command to execute in the  terminal
-     * @param file - receives a java file to run
-     */
-    private void executeCommand(String command, StudentSubmissionFile file) {
         try {
             Process process = Runtime.getRuntime().exec(command);
             file.setProgramOutput(readFromTerminal(process.getInputStream()));
@@ -53,6 +48,7 @@ public class TerminalCommands {
             System.out.println("InterruptedException: runStudentCode() in TerminalCommands.java");
         }
     }
+
 
     /**
      * executeCommand() calls this method 2 times:

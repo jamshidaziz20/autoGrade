@@ -10,12 +10,10 @@
 
 public class Main {
 
-    public TerminalCommands terminalCommands;
-    public StudentSubmissionFile studentSubmissionFile;
-    public FileToString expectedOutputFile;
+    public static TerminalCommands terminalCommands;
+    public static StudentSubmissionFile studentSubmissionFile;
+    public static FileToString expectedOutputFile;
     public String[] Tests;
-    public double totalCompileTime;
-    public double totalRunTime;
 
     /**
      * This constructor makes 3 new objects: terminalCommands, studentSubmissionFile, fileToStrings
@@ -36,17 +34,9 @@ public class Main {
      * Measure the compile & runStudentFile time
      */
     public void runStudentFile() {
-        //Total Compile Time
-        double compileTimeStart = System.nanoTime();
-        terminalCommands.runJAVAC(studentSubmissionFile);
-        double compileTimeEnd = System.nanoTime();
-        totalCompileTime = (compileTimeEnd - compileTimeStart) / 1000000000;
 
-        //Total Run Time
-        double runTimeStart = System.nanoTime();
+        terminalCommands.runJAVAC(studentSubmissionFile);
         terminalCommands.runJAVA(studentSubmissionFile);
-        double runTimeEnd = System.nanoTime();
-        totalRunTime = (runTimeEnd - runTimeStart) / 1000000000;
 
 //        studentSubmissionFile.print();
 //        System.out.println(expectedOutputFile.getFileOutput());
@@ -63,6 +53,10 @@ public class Main {
 
         Main assignment = new Main(args[0],args[1]);
         assignment.runStudentFile();
+        /**TODO:
+         * Iterate through the tests array and execute each test
+         *
+         */
 
     }//end of main method
 
