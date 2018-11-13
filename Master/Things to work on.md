@@ -10,6 +10,6 @@
 <ul>
     <li>I must recieve a string of tests separated by a comma</li>
     <li>Handle the Scanner case, where the student program needs to take user input from the Scanner</li>
-    <li></li>
+    
 </ul>
 
